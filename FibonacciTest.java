@@ -23,6 +23,8 @@ public class FibonacciTest {
         System.out.println("Memoized 40:");
         System.out.println(myFib.memoFib(40));
         
+        myFib.resetArray();
+        
         System.out.println("Simple 45:");
         System.out.println(myFib.simpleFib(45));
         System.out.println("Memoized 45:");

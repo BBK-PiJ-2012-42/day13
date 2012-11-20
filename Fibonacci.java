@@ -22,6 +22,10 @@ public class Fibonacci {
     // arrays are 0-based, so F(1) is stored at position 0, etc
     private int[] precalculated = null;
     
+    public void resetArray() {
+        precalculated = null;
+    }
+    
     public int memoFib(int n) {
         if (precalculated == null) {
             initPrecalculatedArray(n);
