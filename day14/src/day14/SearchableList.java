@@ -18,16 +18,21 @@ public class SearchableList {
     }
     
     private ArrayList binSearch(ArrayList aList, int value) {
-        if (aList.get(aList.size()/2) < value) {
-            return (ArrayList) aList.subList(aList.size()/2, aList.size());
+        if ((int) aList.get(aList.size()/2) < value) {
+            return binSearch( (ArrayList) aList.subList(aList.size()/2, aList.size()), value);
         } else {
-            return (ArrayList) aList.subList(aList.size()/2, aList.size());
+            return binSearch(  (ArrayList) aList.subList(0, aList.size()/2), value);
         }
-        return aList;
+
     }
     
     public boolean contains(int value) {
-        return true;
+        if (binSearch(myList, value).get(0) == value) {
+            return true;
+        } else {
+            return false;
+        }
+        
     }
     
 }
